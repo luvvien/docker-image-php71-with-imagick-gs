@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev wget zlibc git
     && cd ghostscript-9.22-linux-x86_64 \
     && cp gs-922-linux-x86_64 /usr/local/bin/gs \
     && cp gs-922-linux-x86_64 /usr/bin/gs \
-    && rm ../ghostscript-9.22-linux-x86_64.tgr.gz \
+    && rm ../ghostscript-9.22-linux-x86_64.tar.gz \
     && rm -rf ghostscript-9.22-linux-x86_64 \
 
     && echo " Clean up:"  && \
