@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev git libmagickw
     && cp gs-922-linux-x86_64 /usr/local/bin/gs \
     && cp gs-922-linux-x86_64 /usr/bin/gs \
     && rm ../ghostscript-9.22-linux-x86_64.tgz \
-    && rm -rf ghostscript-9.22-linux-x86_64
+    && rm -rf ghostscript-9.22-linux-x86_64 \
 
     && echo " Clean up:"  && \
     apt-get clean  && \
