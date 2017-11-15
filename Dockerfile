@@ -1,6 +1,6 @@
 FROM php:7.1-fpm
 
-RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev git libmagickwand-dev --no-install-recommends \
+RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev wget zlibc git libmagickwand-dev --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
     && docker-php-ext-install gd pdo_mysql zip opcache \
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev git libmagickw
 
     && DEBIAN_FRONTEND=noninteractive echo " Install imagick:" && pecl install imagick && docker-php-ext-enable imagick \
 
-    && curl https://github.com/luvvien/resources/raw/master/ghostscript-9.22-linux-x86_64.tar\
+    && wget https://github.com/luvvien/resources/raw/master/ghostscript-9.22-linux-x86_64.tar\
     && tar -xzvf ghostscript-9.22-linux-x86_64.tgz \
     && cd ghostscript-9.22-linux-x86_64 \
     && cp gs-922-linux-x86_64 /usr/local/bin/gs \
