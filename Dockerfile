@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev git libmagickw
     && composer self-update \
 
     && DEBIAN_FRONTEND=noninteractive echo " Install imagick:" && pecl install imagick && docker-php-ext-enable imagick \
-    
+
     && curl https://github.com/luvvien/resources/raw/master/ghostscript-9.22-linux-x86_64.tar\
-    && tar -xzvf /tmp/ghostscript-9.22-linux-x86_64.tgz \
+    && tar -xzvf ghostscript-9.22-linux-x86_64.tgz \
     && cd ghostscript-9.22-linux-x86_64 \
     && cp gs-922-linux-x86_64 /usr/local/bin/gs \
     && cp gs-922-linux-x86_64 /usr/bin/gs \
